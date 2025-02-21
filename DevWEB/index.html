@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades Complementares</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Registro de Atividades Complementares</h2>
+        <form id="atividadesForm">
+            <select id="categoriaAtividade" required>
+                <option value="">Selecione a categoria</option>
+                <option value="ensino">Atividades de Ensino</option>
+                <option value="extensao">Atividades de Extensão</option>
+                <option value="pesquisa">Atividades de Pesquisa</option>
+            </select>
+
+            <select id="tipoAtividade" required disabled>
+                <option value="">Selecione a atividade</option>
+            </select>
+
+            <input type="text" id="nomeAtividade" placeholder="Nome da Atividade" required>
+            <input type="number" id="horasRealizadas" placeholder="Horas Realizadas" min="0" required>
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <table id="tabelaAtividades">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Atividade</th>
+                    <th>Nome</th>
+                    <th>Horas Realizadas</th>
+                    <th>Horas Aproveitadas</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Total de Horas:</td>
+                    <td id="totalHoras">0</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
